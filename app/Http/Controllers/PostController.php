@@ -24,7 +24,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('create');
     }
 
     /**
@@ -32,7 +32,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // this is simple CRUD example ¯\_(ツ)_/¯
+        Post::create([
+            'title' => $request->title,
+            'body' => $request->body
+        ]);
     }
 
     /**
